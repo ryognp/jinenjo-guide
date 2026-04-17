@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>合同会社設立 × 認定農業者 完全ガイド</title>
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --earth-900: #2c1810;
+  --earth-800: #3d2517;
+  --earth-700: #5c3a24;
+  --earth-600: #7a5234;
+  --earth-500: #8b6914;
+  --green-900: #1a2e1a;
+  --green-700: #2d5a27;
+  --green-600: #3a7d32;
+  --green-500: #4a9e3f;
+  --green-400: #6abe5e;
+  --green-100: #e8f5e6;
+  --beige-50: #faf8f5;
+  --beige-100: #f5f0e8;
+  --beige-200: #e8dfd2;
+  --beige-300: #d4c8b5;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+  --accent: #c17817;
+  --accent-light: #e8a84c;
+  --danger: #b91c1c;
+  --danger-light: #fef2f2;
+  --info: #1e40af;
+  --info-light: #eff6ff;
+}
+
+body {
+  font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "游ゴシック体", "Yu Gothic", "メイリオ", Meiryo, sans-serif;
+  color: var(--gray-800);
+  background: var(--beige-50);
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* === COVER === */
+.cover {
+  min-height: 100vh;
+  background: linear-gradient(160deg, var(--earth-900) 0%, var(--green-900) 50%, var(--earth-800) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 3rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+.cover::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -30%;
+  width: 80%;
+  height: 200%;
+  background: radial-gradient(ellipse, rgba(74,158,63,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cover-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--green-400);
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+.cover h1 {
+  font-family: "Hiragino Mincho ProN", "游明朝体", "Yu Mincho", serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: #fff;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.05em;
+}
+.cover h1 span {
+  display: block;
+  color: var(--accent-light);
+  font-size: 0.6em;
+  margin-top: 0.5rem;
+  letter-spacing: 0.08em;
+}
+.cover-meta {
+  color: var(--beige-300);
+  font-size: 0.85rem;
+  margin-top: 1rem;
+}
+.cover-meta time {
+  color: var(--green-400);
+  font-weight: 600;
+}
+.cover-profile {
+  margin-top: 3rem;
+  padding: 1.5rem 2rem;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  max-width: 480px;
+  text-align: left;
+}
+.cover-profile h3 {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--green-400);
+  margin-bottom: 0.75rem;
+}
+.cover-profile p {
+  color: var(--beige-200);
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+
+/* === TOC === */
+.toc {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+.toc h2 {
+  font-family: "Hiragino Mincho ProN", "游明朝体", "Yu Mincho", serif;
+  font-size: 1.5rem;
+  color: var(--earth-800);
+  margin-bottom: 2rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--earth-700);
+}
+.toc-list {
+  list-style: none;
+  counter-reset: toc;
+}
+.toc-list li {
+  counter-increment: toc;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--beige-200);
+}
+.toc-list li a {
+  text-decoration: none;
+  color: var(--gray-700);
+  font-size: 0.95rem;
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  transition: color 0.2s;
+}
+.toc-list li a:hover { color: var(--green-600); }
+.toc-list li a::before {
+  content: "0" counter(toc);
+  font-family: "Hiragino Mincho ProN", serif;
+  font-size: 1.1rem;
+  color: var(--accent);
+  font-weight: 700;
+  flex-shrink: 0;
+  width: 2rem;
+}
+
+/* === SECTIONS === */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+section {
+  padding: 4rem 0;
+}
+section + section {
+  border-top: 1px solid var(--beige-200);
+}
+.section-num {
+  font-family: "Hiragino Mincho ProN", serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+h2.section-title {
+  font-family: "Hiragino Mincho ProN", "游明朝体", "Yu Mincho", serif;
+  font-size: 1.6rem;
+  color: var(--earth-800);
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+h2.section-title + .section-lead {
+  font-size: 0.9rem;
+  color: var(--gray-500);
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+h3 {
+  font-size: 1.1rem;
+  color: var(--earth-700);
+  font-weight: 700;
+  margin: 2rem 0 0.75rem;
+  padding-left: 0.75rem;
+  border-left: 3px solid var(--green-600);
+}
+h4 {
+  font-size: 0.95rem;
+  color: var(--gray-700);
+  font-weight: 700;
+  margin: 1.5rem 0 0.5rem;
+}
+p {
+  margin-bottom: 1rem;
+  font-size: 0.92rem;
+  color: var(--gray-700);
+}
+a { color: var(--green-700); }
+a:hover { color: var(--green-600); }
+
+/* === CARDS === */
+.card-grid {
+  display: grid;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.card-grid.cols-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.card {
+  background: #fff;
+  border: 1px solid var(--beige-200);
+  border-radius: 6px;
+  padding: 1.25rem 1.5rem;
+}
+.card-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.card-label.merit { color: var(--green-600); }
+.card-label.demerit { color: var(--danger); }
+.card-label.risk { color: #b45309; }
+.card-label.info { color: var(--info); }
+.card h4 { margin: 0 0 0.5rem; font-size: 0.95rem; }
+.card p { font-size: 0.85rem; margin-bottom: 0; color: var(--gray-600); }
+
+/* === TABLE === */
+.table-wrap {
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  border: 1px solid var(--beige-200);
+  border-radius: 6px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+thead {
+  background: var(--earth-800);
+  color: #fff;
+}
+th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+}
+td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--beige-200);
+  color: var(--gray-700);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) { background: var(--beige-50); }
+tbody tr:hover { background: var(--beige-100); }
+
+/* === TIMELINE === */
+.timeline {
+  position: relative;
+  padding-left: 2.5rem;
+  margin: 2rem 0;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0.75rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--green-600);
+}
+.tl-item {
+  position: relative;
+  margin-bottom: 2rem;
+}
+.tl-item::before {
+  content: '';
+  position: absolute;
+  left: -2.5rem;
+  top: 0.25rem;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--green-600);
+  border: 3px solid var(--beige-50);
+  box-shadow: 0 0 0 2px var(--green-600);
+}
+.tl-item.current::before {
+  background: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent);
+}
+.tl-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--green-600);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+.tl-item.current .tl-label { color: var(--accent); }
+.tl-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--earth-800);
+  margin-bottom: 0.25rem;
+}
+.tl-desc {
+  font-size: 0.85rem;
+  color: var(--gray-600);
+  line-height: 1.6;
+}
+
+/* === CALLOUT === */
+.callout {
+  padding: 1.25rem 1.5rem;
+  border-radius: 6px;
+  margin: 1.5rem 0;
+  font-size: 0.88rem;
+}
+.callout.warning {
+  background: #fffbeb;
+  border-left: 4px solid #f59e0b;
+}
+.callout.info {
+  background: var(--info-light);
+  border-left: 4px solid var(--info);
+}
+.callout.danger {
+  background: var(--danger-light);
+  border-left: 4px solid var(--danger);
+}
+.callout.success {
+  background: var(--green-100);
+  border-left: 4px solid var(--green-600);
+}
+.callout strong { display: block; margin-bottom: 0.25rem; }
+
+/* === CHECKLIST === */
+.checklist {
+  list-style: none;
+  margin: 1.5rem 0;
+}
+.checklist li {
+  padding: 0.6rem 0 0.6rem 2rem;
+  position: relative;
+  font-size: 0.9rem;
+  color: var(--gray-700);
+  border-bottom: 1px solid var(--beige-100);
+}
+.checklist li::before {
+  content: '☐';
+  position: absolute;
+  left: 0;
+  color: var(--green-600);
+  font-size: 1.1rem;
+}
+
+/* === BADGE === */
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+.badge.green { background: var(--green-100); color: var(--green-700); }
+.badge.orange { background: #fff7ed; color: #9a3412; }
+.badge.blue { background: #eff6ff; color: #1e40af; }
+
+/* === SOURCE === */
+.source-link {
+  font-size: 0.78rem;
+  color: var(--gray-400);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--gray-400);
+}
+.source-link:hover { color: var(--green-600); border-bottom-color: var(--green-600); }
+
+/* === FOOTER === */
+footer {
+  background: var(--earth-900);
+  color: var(--beige-300);
+  padding: 3rem 2rem;
+  text-align: center;
+  font-size: 0.8rem;
+  line-height: 1.8;
+}
+footer a { color: var(--green-400); }
+
+/* === PRINT === */
+@media print {
+  .cover { min-height: auto; padding: 3rem 2rem; page-break-after: always; }
+  .toc { page-break-after: always; }
+  section { page-break-inside: avoid; }
+  body { font-size: 10pt; }
+}
+@media (max-width: 640px) {
+  .cover h1 { font-size: 1.8rem; }
+  .container { padding: 0 1.25rem; }
+  h2.section-title { font-size: 1.3rem; }
+  .card-grid.cols-2 { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== COVER ===== -->
+<div class="cover">
+  <p class="cover-label">自然薯農家のための実務ガイドブック</p>
+  <h1>合同会社設立から<br>認定農業者取得まで<span>補助金・助成金・リスク対策 完全ガイド</span></h1>
+  <p class="cover-meta">作成日：<time>2026年4月16日</time>　｜　茨城県北茨城市小豆畑</p>
+  <div class="cover-profile">
+    <h3>あなたの現在地</h3>
+    <p><b>34歳</b>・都内在住。合同会社を設立し、北茨城市小豆畑にて農地契約済み。自然薯<b>2,000本</b>の栽培を開始、<b>2026年11月</b>に初収穫予定。都内では販売網構築の営業活動、茨城での作業者は確保済み。<b>2年後</b>の認定農業者取得を目指す。</p>
+  </div>
+</div>
+
+<!-- ===== TOC ===== -->
+<nav class="toc">
+  <h2>目次</h2>
+  <ol class="toc-list">
+    <li><a href="#sec1">合同会社で農業法人を設立する際の注意点</a></li>
+    <li><a href="#sec2">認定農業者制度のしくみ</a></li>
+    <li><a href="#sec3">合同会社設立から認定農業者取得へのロードマップ</a></li>
+    <li><a href="#sec4">認定農業者のメリット・デメリット</a></li>
+    <li><a href="#sec5">補助金・助成金カタログ</a></li>
+    <li><a href="#sec6">リスク分析と対策</a></li>
+    <li><a href="#sec7">アクションチェックリスト</a></li>
+  </ol>
+</nav>
+
+<!-- ===== SECTION 1 ===== -->
+<section id="sec1">
+<div class="container">
+  <span class="section-num">SECTION 01</span>
+  <h2 class="section-title">合同会社で農業法人を設立する際の注意点</h2>
+  <p class="section-lead">農業に合同会社を選ぶメリットは設立コストの低さと運営の柔軟性。ただし農地取得を目指すなら「農地所有適格法人」の要件を理解する必要があります。</p>
+
+  <h3>合同会社 vs 株式会社（農業法人の場合）</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>比較項目</th><th>合同会社（LLC）</th><th>株式会社</th></tr></thead>
+      <tbody>
+        <tr><td>設立費用</td><td><b>約6〜10万円</b></td><td><b>約20〜25万円</b></td></tr>
+        <tr><td>登録免許税</td><td><b>6万円</b></td><td><b>15万円〜</b></td></tr>
+        <tr><td>定款認証</td><td>不要</td><td>必要（<b>約5万円</b>）</td></tr>
+        <tr><td>意思決定</td><td>社員の同意（柔軟）</td><td>株主総会・取締役会</td></tr>
+        <tr><td>利益配分</td><td>自由に設定可</td><td>出資比率に応じる</td></tr>
+        <tr><td>社会的信用</td><td>やや低い</td><td>高い</td></tr>
+        <tr><td>農地所有適格法人</td><td>可能</td><td>可能（非公開会社のみ）</td></tr>
+        <tr><td>資金調達</td><td>増資しづらい</td><td>株式発行で調達可</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><a href="https://www.maff.go.jp/j/kobetu_ninaite/n_seido/seido_houzin.html" class="source-link" target="_blank">出典：農林水産省「農業法人について」</a></p>
+
+  <h3>農地所有適格法人の4要件</h3>
+  <p>農地を「所有」して農業経営を行うには、以下の4要件すべてを満たす必要があります。農地を「借りる」だけなら、一般法人でも可能です（農地法3条の許可は必要）。</p>
+
+  <div class="card-grid cols-2">
+    <div class="card">
+      <span class="card-label info">要件1</span>
+      <h4>法人形態要件</h4>
+      <p>株式会社（非公開会社）、合名会社、合資会社、合同会社、農事組合法人のいずれか。合同会社はこの要件を満たします。</p>
+    </div>
+    <div class="card">
+      <span class="card-label info">要件2</span>
+      <h4>事業要件</h4>
+      <p>売上高の<b>過半</b>が農業（加工・販売含む）であること。直近<b>3年</b>の売上で判定されます。自然薯の栽培・販売が主事業であれば問題ありません。</p>
+    </div>
+    <div class="card">
+      <span class="card-label info">要件3</span>
+      <h4>議決権要件</h4>
+      <p>農業関係者（農業従事者、農地提供者等）が総議決権の<b>過半数</b>を保有すること。農業に<b>年間150日以上</b>従事する構成員が該当します。</p>
+    </div>
+    <div class="card">
+      <span class="card-label info">要件4</span>
+      <h4>役員要件</h4>
+      <p>役員の<b>過半数</b>が農業に常時従事する構成員であること。かつ、役員または重要な使用人のうち<b>1人以上</b>が農作業に<b>年間60日以上</b>従事すること。</p>
+    </div>
+  </div>
+  <p><a href="https://agri.mynavi.jp/2024_02_25_256186/" class="source-link" target="_blank">出典：マイナビ農業「農地所有適格法人とは？」</a></p>
+
+  <div class="callout warning">
+    <strong>注意：都内本店 × 茨城で農業する場合</strong>
+    法人の本店が東京都内にあっても、農業を行う場所（北茨城市）の農業委員会に農地法の許可申請を行います。法人住民税は東京都と北茨城市の両方に均等割がかかる可能性があります。定款の事業目的には「農産物の生産、加工及び販売」を明記してください。
+  </div>
+
+  <h3>定款作成のポイント</h3>
+  <p>定款の「事業目的」に農業関連の記載がないと、農地法の許可申請時に問題になることがあります。以下の記載を推奨します。</p>
+  <ul class="checklist">
+    <li>農産物の生産、加工及び販売</li>
+    <li>農業に関する技術の研究開発及びコンサルティング</li>
+    <li>農産物及び加工品の通信販売・インターネット販売</li>
+    <li>前各号に附帯又は関連する一切の事業</li>
+  </ul>
+</div>
+</section>
+
+<!-- ===== SECTION 2 ===== -->
+<section id="sec2">
+<div class="container">
+  <span class="section-num">SECTION 02</span>
+  <h2 class="section-title">認定農業者制度のしくみ</h2>
+  <p class="section-lead">認定農業者とは、農業経営改善計画を作成し市町村から認定を受けた農業者。法人も対象です。</p>
+
+  <h3>認定農業者とは</h3>
+  <p>農業経営基盤強化促進法に基づき、自らの農業経営を計画的に改善するための「農業経営改善計画」を作成し、市町村から認定を受けた農業経営者（個人・法人）のことです。認定を受けると、融資・補助金・税制などで幅広い優遇を受けられます。</p>
+  <p><a href="https://www.maff.go.jp/j/kobetu_ninaite/n_seido/seido_ninaite.html" class="source-link" target="_blank">出典：農林水産省「認定農業者制度について」</a></p>
+
+  <h3>認定の3要件</h3>
+  <div class="card-grid">
+    <div class="card">
+      <span class="card-label info">要件1</span>
+      <h4>計画が市町村の基本構想に照らして適切</h4>
+      <p>市町村が定める「農業経営基盤の強化の促進に関する基本構想」の水準（年間農業所得、年間労働時間等）を達成する計画であること。</p>
+    </div>
+    <div class="card">
+      <span class="card-label info">要件2</span>
+      <h4>農用地の効率的・総合的な利用に適切</h4>
+      <p>計画の内容が、農地を効率的かつ総合的に利用するものであること。</p>
+    </div>
+    <div class="card">
+      <span class="card-label info">要件3</span>
+      <h4>計画の達成が確実と見込まれる</h4>
+      <p>目標に対して具体的な手段が示され、達成の見込みがあると判断されること。法人の場合は直近の決算書の提出も求められます。</p>
+    </div>
+  </div>
+
+  <h3>申請先はどこ？</h3>
+  <div class="callout info">
+    <strong>法人の本店が都内、農業は北茨城市の場合</strong>
+    認定農業者の申請先は、実際に農業を行っている市町村です。つまり<strong>北茨城市</strong>に申請します。複数の市町村にまたがる場合は都道府県知事に申請しますが、今回は北茨城市のみなので市への申請となります。
+    <br><a href="https://www.maff.go.jp/kanto/keiei/ninaite/nintei.html" class="source-link" target="_blank">出典：関東農政局「認定農業者制度について」</a>
+  </div>
+
+  <h3>認定までの流れ</h3>
+  <p>申請から認定まで通常<b>1〜3ヶ月</b>程度です。農業経営改善計画書を作成し、北茨城市の農政担当窓口に提出します。市の審査会で審議され、要件を満たしていれば認定されます。認定期間は<b>5年間</b>で、更新が必要です。</p>
+
+  <h3>農業経営改善計画のポイント</h3>
+  <p>自然薯農家として計画を作る場合、以下の点を具体的に記載します。</p>
+  <ul class="checklist">
+    <li>経営規模の目標（面積・本数・収穫量）</li>
+    <li>生産方式の合理化（北茨城式パイプ栽培の導入、作業効率化）</li>
+    <li>経営管理の合理化（法人としての経理・労務管理体制）</li>
+    <li>農業従事の態様の改善（労働時間の目標設定）</li>
+    <li>目標所得額と達成のための具体策</li>
+  </ul>
+</div>
+</section>
+
+<!-- ===== SECTION 3 ===== -->
+<section id="sec3">
+<div class="container">
+  <span class="section-num">SECTION 03</span>
+  <h2 class="section-title">合同会社設立から認定農業者取得へのロードマップ</h2>
+  <p class="section-lead">現在地から2年後の認定農業者取得までの全体像を時系列で整理しました。</p>
+
+  <div class="timeline">
+    <div class="tl-item current">
+      <p class="tl-label">2026年 4月（現在）</p>
+      <p class="tl-title">合同会社設立・農地契約済み</p>
+      <p class="tl-desc">合同会社を都内で設立済み。北茨城市小豆畑の農地を契約し、自然薯<b>2,000本</b>の栽培を開始。都内で販売網構築の営業活動中。</p>
+    </div>
+    <div class="tl-item">
+      <p class="tl-label">2026年 4〜5月</p>
+      <p class="tl-title">農地法の許可取得</p>
+      <p class="tl-desc">北茨城市農業委員会に農地法3条の許可申請（借地の場合）。農業委員会は毎月開催、許可まで<b>約1ヶ月</b>。</p>
+    </div>
+    <div class="tl-item">
+      <p class="tl-label">2026年 5〜10月</p>
+      <p class="tl-title">栽培作業・実績づくり</p>
+      <p class="tl-desc">種芋植付・管理作業を実施。売上実績・農業従事日数を記録。青色申告の届出を行い、経理体制を整備。</p>
+    </div>
+    <div class="tl-item">
+      <p class="tl-label">2026年 11月</p>
+      <p class="tl-title">初収穫</p>
+      <p class="tl-desc">自然薯<b>2,000本</b>の収穫。卸売・ネット販売の開始。初年度の売上実績を確保。</p>
+    </div>
+    <div class="tl-item">
+      <p class="tl-label">2026年12月〜2027年3月</p>
+      <p class="tl-title">初年度決算・振り返り</p>
+      <p class="tl-desc">初年度の決算書作成。収支実績をもとに2年目の計画を策定。認定農業者申請に向けた準備開始。</p>
+    </div>
+    <div class="tl-item">
+      <p class="tl-label">2027年 4月〜</p>
+      <p class="tl-title">2年目栽培・規模拡大検討</p>
+      <p class="tl-desc">2年目の栽培開始。初年度の経験を活かし生産性向上。販路拡大。農業経営改善計画書の素案作成開始。</p>
+    </div>
+    <div class="tl-item">
+      <p class="tl-label">2027年 秋〜2028年初頭</p>
+      <p class="tl-title">農業経営改善計画書の作成・提出</p>
+      <p class="tl-desc"><b>2年分</b>の実績データをもとに<b>5年間</b>の経営改善計画を作成。北茨城市農政窓口に相談しながら申請書を仕上げる。</p>
+    </div>
+    <div class="tl-item">
+      <p class="tl-label">2028年 春（目標）</p>
+      <p class="tl-title">認定農業者の認定取得</p>
+      <p class="tl-desc">北茨城市の審査会を経て認定。スーパーL資金など各種支援制度へのアクセスが可能に。</p>
+    </div>
+  </div>
+
+  <div class="callout success">
+    <strong>ポイント：実績づくりが最重要</strong>
+    認定農業者の申請には「計画の達成が確実」と認められる必要があります。<b>1〜2年</b>の栽培実績と売上記録があると、審査で有利になります。日々の作業記録・農業従事日数・売上データを丁寧に残しておきましょう。
+  </div>
+</div>
+</section>
+
+<!-- ===== SECTION 4 ===== -->
+<section id="sec4">
+<div class="container">
+  <span class="section-num">SECTION 04</span>
+  <h2 class="section-title">認定農業者のメリット・デメリット</h2>
+  <p class="section-lead">認定を受けることで得られる優遇と、負担・リスクの両面を整理します。</p>
+
+  <h3>メリット</h3>
+  <div class="card-grid cols-2">
+    <div class="card">
+      <span class="card-label merit">融資</span>
+      <h4>スーパーL資金</h4>
+      <p>認定農業者専用の長期低利融資。法人は<b>最大10億円</b>。貸付当初<b>5年間</b>は実質無利子（利子助成制度）。償還期限<b>25年</b>。</p>
+    </div>
+    <div class="card">
+      <span class="card-label merit">融資</span>
+      <h4>農業近代化資金の金利優遇</h4>
+      <p>認定農業者は一般より低い金利で借入可能。機械・施設の導入資金として<b>最大1,800万円</b>（法人）。</p>
+    </div>
+    <div class="card">
+      <span class="card-label merit">補助金</span>
+      <h4>強い農業・担い手づくり総合支援交付金</h4>
+      <p>農業用機械や施設の導入費を支援。認定農業者が対象。上限<b>300万円</b>程度。</p>
+    </div>
+    <div class="card">
+      <span class="card-label merit">税制</span>
+      <h4>農業経営基盤強化準備金制度</h4>
+      <p>農業者が受け取った交付金を準備金として積み立てた場合、必要経費（損金）に算入可能。設備投資時に圧縮記帳も可。</p>
+    </div>
+    <div class="card">
+      <span class="card-label merit">年金</span>
+      <h4>農業者年金の国庫補助</h4>
+      <p>認定農業者かつ青色申告者は、保険料月額<b>2万円</b>のうち<b>最大1万円</b>を国庫補助（<b>最長20年</b>）。</p>
+    </div>
+    <div class="card">
+      <span class="card-label merit">信用</span>
+      <h4>経営の信用力向上</h4>
+      <p>認定農業者であることは「行政のお墨付き」。取引先や金融機関からの信頼度が向上し、販路拡大にもプラス。</p>
+    </div>
+  </div>
+  <p><a href="https://www.jfc.go.jp/n/finance/search/a_30.html" class="source-link" target="_blank">出典：日本政策金融公庫「スーパーL資金」</a>　<a href="https://nougyou.pro/%E8%AA%8D%E5%AE%9A%E8%BE%B2%E6%A5%AD%E8%80%85%E3%81%A8%E3%81%AA%E3%81%A3%E3%81%9F%E5%A0%B4%E5%90%88%E3%81%AE%E3%83%A1%E3%83%AA%E3%83%83%E3%83%88/" class="source-link" target="_blank">出典：農業手続き安心代行センター</a></p>
+
+  <h3>デメリット・留意点</h3>
+  <div class="card-grid cols-2">
+    <div class="card">
+      <span class="card-label demerit">事務負担</span>
+      <h4>計画作成・報告義務</h4>
+      <p><b>5年間</b>の経営改善計画書を作成する必要あり。計画の進捗報告が求められる場合も。</p>
+    </div>
+    <div class="card">
+      <span class="card-label demerit">更新</span>
+      <h4>5年ごとの認定更新</h4>
+      <p>認定期間は<b>5年</b>。更新時に新たな計画書を作成し再申請が必要。計画未達でも更新は可能だが、説明が求められる。</p>
+    </div>
+    <div class="card">
+      <span class="card-label demerit">制約</span>
+      <h4>計画と実態の乖離リスク</h4>
+      <p>大幅に計画を下回った場合、次回更新時に厳しい審査を受ける可能性。ただし認定取消は極めてまれ。</p>
+    </div>
+    <div class="card">
+      <span class="card-label demerit">要件維持</span>
+      <h4>農業従事日数の維持</h4>
+      <p>役員の農作業従事日数（<b>年間60日以上</b>）などの要件を継続的に満たす必要がある。記録管理が重要。</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== SECTION 5 ===== -->
+<section id="sec5">
+<div class="container">
+  <span class="section-num">SECTION 05</span>
+  <h2 class="section-title">補助金・助成金カタログ</h2>
+  <p class="section-lead">自然薯農家として活用可能な主な支援制度を一覧にまとめました。</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>制度名</th>
+          <th>対象者</th>
+          <th>支援内容</th>
+          <th>金額・条件</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>経営開始資金</strong><br><span class="badge green">新規就農者</span></td>
+          <td>認定新規就農者<br>（49歳以下）</td>
+          <td>就農直後の経営確立を支援する資金を交付</td>
+          <td><b>年間最大150万円</b>×<b>最長3年</b><br>前年世帯所得<b>600万円</b>未満</td>
+        </tr>
+        <tr>
+          <td><strong>経営発展支援事業</strong><br><span class="badge green">新規就農者</span></td>
+          <td>認定新規就農者</td>
+          <td>機械・施設の導入費用を補助</td>
+          <td>上限<b>1,000万円</b>（経営開始資金併用時<b>500万円</b>）<br>補助率：国<b>1/2</b>、県<b>1/4</b>、本人<b>1/4</b></td>
+        </tr>
+        <tr>
+          <td><strong>スーパーL資金</strong><br><span class="badge orange">認定農業者</span></td>
+          <td>認定農業者</td>
+          <td>農業経営基盤強化のための長期低利融資</td>
+          <td>法人<b>最大10億円</b><br>当初<b>5年間</b>実質無利子<br>償還期限<b>25年</b></td>
+        </tr>
+        <tr>
+          <td><strong>青年等就農資金</strong><br><span class="badge green">新規就農者</span></td>
+          <td>認定新規就農者</td>
+          <td>無利子融資</td>
+          <td><b>最大3,700万円</b><br>無利子、償還期限<b>17年</b></td>
+        </tr>
+        <tr>
+          <td><strong>強い農業づくり総合支援交付金</strong><br><span class="badge orange">認定農業者</span></td>
+          <td>認定農業者等</td>
+          <td>農業用機械・施設の導入費支援</td>
+          <td>事業費の1/2以内<br>上限額は事業内容による</td>
+        </tr>
+        <tr>
+          <td><strong>農地利用効率化等支援交付金</strong><br><span class="badge blue">北茨城市</span></td>
+          <td>認定農業者・認定就農者等</td>
+          <td>農業用機械・施設の取得費を助成</td>
+          <td>融資残の自己負担部分に対し補助<br>上限<b>300万円</b></td>
+        </tr>
+        <tr>
+          <td><strong>茨城県新規就農者支援</strong><br><span class="badge blue">茨城県</span></td>
+          <td>県内の新規就農者</td>
+          <td>就農準備資金の交付、研修支援</td>
+          <td><b>年間最大150万円</b>×<b>最長2年</b><br>研修<b>1,200時間</b>以上</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>
+    <a href="https://www.maff.go.jp/j/new_farmer/n_syunou/roudou.html" class="source-link" target="_blank">出典：農林水産省「就農準備資金・経営開始資金」</a>
+    <a href="https://www.maff.go.jp/j/new_farmer/n_syunou/hatten.html" class="source-link" target="_blank">出典：農林水産省「経営発展支援事業」</a>
+    <a href="https://www.pref.ibaraki.jp/nourinsuisan/nokeiei/gijutsu/shunojyunbishikin.html" class="source-link" target="_blank">出典：茨城県「就農準備資金」</a>
+    <a href="https://www.city.kitaibaraki.lg.jp/docs/2024020500034/" class="source-link" target="_blank">出典：北茨城市「農地利用効率化等支援交付金」</a>
+  </p>
+
+  <div class="callout warning">
+    <strong>自然薯農家としての活用戦略</strong>
+    まずは「認定新規就農者」として経営開始資金を申請し、生活費の安定を図りましょう。機械・パイプなどの設備導入には経営発展支援事業（補助率<b>75%</b>）を活用。<b>2年後</b>に認定農業者を取得すれば、スーパーL資金や強い農業づくり交付金にもアクセスでき、規模拡大の選択肢が広がります。
+  </div>
+
+  <div class="callout info">
+    <strong>「認定新規就農者」と「認定農業者」は別制度です</strong>
+    認定新規就農者は就農<b>5年以内</b>の方向け。認定農業者は経営年数を問わず申請可。まず認定新規就農者で申請し、経営が軌道に乗ったら認定農業者へステップアップするのが一般的な流れです。
+    <br><a href="https://www.maff.go.jp/j/new_farmer/nintei_syunou.html" class="source-link" target="_blank">出典：農林水産省「認定新規就農者制度について」</a>
+  </div>
+</div>
+</section>
+
+<!-- ===== SECTION 6 ===== -->
+<section id="sec6">
+<div class="container">
+  <span class="section-num">SECTION 06</span>
+  <h2 class="section-title">リスク分析と対策</h2>
+  <p class="section-lead">事業を進める上で想定されるリスクとその対策を整理しました。</p>
+
+  <div class="card-grid">
+    <div class="card">
+      <span class="card-label risk">法的リスク</span>
+      <h4>農地法の許可が得られないリスク</h4>
+      <p>農業委員会の許可が下りない場合、農地を利用できません。事前に北茨城市農業委員会と相談し、要件を確認しておくことが重要。特に「都内法人が茨城で農業する」点は丁寧な説明が必要です。</p>
+    </div>
+    <div class="card">
+      <span class="card-label risk">経営リスク</span>
+      <h4>初年度の収支ギャップ</h4>
+      <p>自然薯は植付から収穫まで<b>約6ヶ月</b>。初年度は売上が<b>11月以降</b>に集中し、それまでの間は支出のみ。人件費・生活費を含め初年度のキャッシュフローを慎重に計画する必要があります。</p>
+    </div>
+    <div class="card">
+      <span class="card-label risk">自然リスク</span>
+      <h4>天候・病害虫による収穫減</h4>
+      <p>自然薯は比較的病害に強い作物ですが、長雨や台風、イノシシなどの獣害リスクがあります。対策：防護柵の設置、天候リスクは農業共済への加入を検討。</p>
+    </div>
+    <div class="card">
+      <span class="card-label risk">制度リスク</span>
+      <h4>補助金制度の変更・廃止</h4>
+      <p>国や自治体の補助金制度は年度ごとに見直されます。特定の補助金を前提にした事業計画は危険。複数の資金調達ルートを確保しておきましょう。</p>
+    </div>
+    <div class="card">
+      <span class="card-label risk">人材リスク</span>
+      <h4>現地作業者の離脱</h4>
+      <p>栽培の実務を担う現地作業者が離脱した場合、栽培が継続できなくなります。対策：作業マニュアルの整備、複数人での技術共有、地域の農業者ネットワークへの参加。</p>
+    </div>
+    <div class="card">
+      <span class="card-label risk">販売リスク</span>
+      <h4>販路の確保が遅れるリスク</h4>
+      <p>収穫時期に十分な販路がないと、在庫を抱えることに。自然薯は常温保存が難しいため、収穫前に卸先・ネット販売体制を整えておく必要があります。</p>
+    </div>
+  </div>
+
+  <div class="callout danger">
+    <strong>最大のリスク：人件費と売上のバランス</strong>
+    前回の事業計画書でも示した通り、<b>3名</b>体制のフルタイム人件費（仮: <b>年間480万円</b>）は初年度売上見込み（<b>約179万円</b>）を大きく上回ります。初期は兼業前提にする、成果連動型の報酬体系にするなど、人件費構造の設計が事業継続の最重要課題です。
+  </div>
+</div>
+</section>
+
+<!-- ===== SECTION 7 ===== -->
+<section id="sec7">
+<div class="container">
+  <span class="section-num">SECTION 07</span>
+  <h2 class="section-title">アクションチェックリスト</h2>
+  <p class="section-lead">合同会社設立から認定農業者取得までに必要なアクションを一覧化しました。</p>
+
+  <h3>直近（2026年4〜6月）</h3>
+  <ul class="checklist">
+    <li>定款に農業関連の事業目的が記載されているか確認</li>
+    <li>北茨城市農業委員会に農地法3条の許可申請</li>
+    <li>青色申告の届出（法人設立後<b>3ヶ月以内</b> or 事業年度開始日の前日まで）</li>
+    <li>税務署への法人設立届出書の提出</li>
+    <li>茨城県・北茨城市の農政窓口に新規就農の相談</li>
+    <li>認定新規就農者の申請を検討（経営開始資金の受給要件確認）</li>
+    <li>農業従事日数・作業内容の記録を開始</li>
+    <li>経営発展支援事業の申請時期を確認（公募期間は限られる）</li>
+  </ul>
+
+  <h3>中期（2026年7月〜2027年3月）</h3>
+  <ul class="checklist">
+    <li>栽培管理・収穫・出荷の実績データを蓄積</li>
+    <li>初年度の売上・経費を正確に記録（決算書作成の基礎）</li>
+    <li>販路の開拓実績を記録（卸先名、販売量、単価）</li>
+    <li>農業共済への加入を検討</li>
+    <li>初年度決算書の作成・確定申告</li>
+    <li>北茨城市の農業支援制度を継続的に確認</li>
+  </ul>
+
+  <h3>認定農業者申請に向けて（2027年〜2028年）</h3>
+  <ul class="checklist">
+    <li>2年分の実績データを基に農業経営改善計画書の素案作成</li>
+    <li>北茨城市農政窓口に認定農業者申請の事前相談</li>
+    <li><b>5年間</b>の経営改善計画を策定（目標所得額・面積・販売額）</li>
+    <li>農業経営改善計画書を北茨城市に提出</li>
+    <li>審査会の審議を経て認定取得</li>
+    <li>認定後、スーパーL資金・各種補助金の活用を開始</li>
+  </ul>
+</div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <p>本資料は2026年4月時点の情報に基づいて作成しています。</p>
+    <p>補助金・助成金の内容は年度ごとに変更される可能性があります。<br>最新情報は各公式サイトまたは窓口にてご確認ください。</p>
+    <p style="margin-top: 1.5rem; font-size: 0.75rem; color: var(--beige-300);">
+      主な参考資料：
+      <a href="https://www.maff.go.jp/j/kobetu_ninaite/n_seido/seido_ninaite.html" target="_blank">農林水産省 認定農業者制度</a> ／
+      <a href="https://www.maff.go.jp/j/kobetu_ninaite/n_seido/seido_houzin.html" target="_blank">農林水産省 農業法人について</a> ／
+      <a href="https://www.jfc.go.jp/n/finance/search/a_30.html" target="_blank">日本政策金融公庫 スーパーL資金</a> ／
+      <a href="https://www.maff.go.jp/j/new_farmer/n_syunou/roudou.html" target="_blank">農林水産省 経営開始資金</a> ／
+      <a href="https://www.maff.go.jp/j/new_farmer/n_syunou/hatten.html" target="_blank">農林水産省 経営発展支援事業</a> ／
+      <a href="https://www.pref.ibaraki.jp/nourinsuisan/nokeiei/gijutsu/shunojyunbishikin.html" target="_blank">茨城県 就農準備資金</a> ／
+      <a href="https://www.city.kitaibaraki.lg.jp/docs/2024020500034/" target="_blank">北茨城市 農地利用効率化等支援交付金</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
